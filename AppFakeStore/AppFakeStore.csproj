@@ -57,10 +57,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\FontsAwesome.otf" />
+	  <None Remove="Resources\Fonts\Lato-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Lato-Regular.ttf" />
 	  <None Remove="Resources\Fonts\MaterialIcons-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Solid.otf" />
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\not_found.jpg" />
 	  <None Remove="Resources\Images\ropa.jpeg" />
+	  <None Remove="Resources\Raw\shopping-cart.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,6 +73,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0-preview.7" />
 	</ItemGroup>
 
 	<ItemGroup>

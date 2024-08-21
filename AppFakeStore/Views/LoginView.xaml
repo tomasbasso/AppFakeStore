@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppFakeStore.Views.LoginView"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Title="LoginView">
 
     <Grid RowDefinitions=".3*,.7*">
@@ -9,6 +10,8 @@
         <Grid BackgroundColor="#fff" Opacity=".8"></Grid>
         <Grid ColumnDefinitions="*,*">
             <Image Aspect="AspectFit" HeightRequest="220" Source="logo.png"></Image>
+            <skia:SKLottieView Grid.Column="1" HeightRequest="100" RepeatCount="-1"
+                               Source="shopping-cart.json"></skia:SKLottieView>
         </Grid>
         <Grid Grid.Row="1">
             <RoundRectangle Margin="-5,-30,-5,-2"
@@ -24,8 +27,56 @@
                        Text="Inicia sesion para continuar"
                        TextColor="Black"
                        ></Label>
-                       
-                       
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="white"
+                                    CornerRadius="10"
+                                    HeightRequest="15"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60">
+                    </RoundRectangle>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource FontFamily="AwesomeSolid"
+                                             Glyph="&#xf0e0;"
+                                             Size="44"
+                                             Color="Black"></FontImageSource>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1"
+                           Placeholder="Email"
+                           Text="ejemplo@email.com"
+                           VerticalOptions="Center"
+                           TextColor="Black"></Entry>
+                </Grid>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="white"
+                    CornerRadius="10"
+                    HeightRequest="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="60">
+                    </RoundRectangle>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource FontFamily="AwesomeSolid"
+                             Glyph="&#xf084;"
+                             Size="44"
+                             Color="Black"></FontImageSource>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1"
+           Placeholder="Contraseña"
+           IsPassword="True"
+           Text="***********"
+           VerticalOptions="Center"
+           TextColor="Black"></Entry>
+                </Grid>
+                <Button Margin="0,20,0,0"
+                        BackgroundColor="Black"
+                        HeightRequest="50"
+                        Text="Iniciar sesion"
+                        TextColor="White"></Button>
             </VerticalStackLayout>
         </Grid>
 
