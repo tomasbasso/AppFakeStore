@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFakeStore.Views.LoginView"
+             Title="LoginView">
+
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="ropa.jpeg"/>
+        <Grid BackgroundColor="#fff" Opacity=".8"></Grid>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFit" HeightRequest="220" Source="logo.png"></Image>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="White"></RoundRectangle>
+            <VerticalStackLayout Margin=" 30,0,30,0">
+                <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       FontSize="Medium"
+                       Text="Bienvenido!"
+                       TextColor="Black"></Label>
+                <Label FontFamily="medium"
+                       Text="Inicia sesion para continuar"
+                       TextColor="Black"
+                       ></Label>
+                       
+                       
+            </VerticalStackLayout>
+        </Grid>
+
+
+    </Grid>
+</ContentPage>

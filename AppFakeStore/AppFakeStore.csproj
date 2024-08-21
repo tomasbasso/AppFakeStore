@@ -58,7 +58,9 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\MaterialIcons-Regular.ttf" />
+	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\not_found.jpg" />
+	  <None Remove="Resources\Images\ropa.jpeg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -70,6 +72,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\AcercaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProductoDetallePage.xaml">
