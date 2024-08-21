@@ -43,11 +43,14 @@
                                              Color="Black"></FontImageSource>
                         </Image.Source>
                     </Image>
-                    <Entry Grid.Column="1"
-                           Placeholder="Email"
-                           Text="ejemplo@email.com"
-                           VerticalOptions="Center"
-                           TextColor="Black"></Entry>
+                    <Entry x:Name="UsernameEntry"
+                   Grid.Column="1"
+                   Placeholder="Usuario"
+                   Text="Usuario"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   Focused="UsernameEntry_Focused"
+                   Unfocused="UsernameEntry_Unfocused"/> 
                 </Grid>
                 <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
                     <RoundRectangle BackgroundColor="white"
@@ -65,18 +68,23 @@
                              Color="Black"></FontImageSource>
                         </Image.Source>
                     </Image>
-                    <Entry Grid.Column="1"
-           Placeholder="Contraseña"
-           IsPassword="True"
-           Text="***********"
-           VerticalOptions="Center"
-           TextColor="Black"></Entry>
+                    <Entry x:Name="PasswordEntry"
+                       Grid.Column="1"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       Text="***********"
+                       VerticalOptions="Center"
+                       TextColor="Black"
+                       Focused="PasswordEntry_Focused"
+                       Unfocused="PasswordEntry_Unfocused"/>
                 </Grid>
-                <Button Margin="0,20,0,0"
-                        BackgroundColor="Black"
-                        HeightRequest="50"
-                        Text="Iniciar sesion"
-                        TextColor="White"></Button>
+                <Button x:Name="LoginButton"
+                    Margin="0,20,0,0"
+                    BackgroundColor="Black"
+                    HeightRequest="50"
+                    Text="Iniciar sesión"
+                    TextColor="White"
+                    Clicked="OnLoginButtonClicked" />
             </VerticalStackLayout>
         </Grid>
 
