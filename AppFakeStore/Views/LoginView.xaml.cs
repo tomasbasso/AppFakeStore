@@ -9,6 +9,7 @@ namespace AppFakeStore.Views
         {
             InitializeComponent();
         }
+
         private void UsernameEntry_Focused(object sender, FocusEventArgs e)
         {
             if (UsernameEntry.Text == "Usuario")
@@ -16,13 +17,15 @@ namespace AppFakeStore.Views
                 UsernameEntry.Text = string.Empty;
             }
         }
+
         private void UsernameEntry_Unfocused(object sender, FocusEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(UsernameEntry.Text))
             {
-                UsernameEntry.Text = "";
+                UsernameEntry.Text = "Usuario"; // Reestablece el texto por defecto si está vacío
             }
         }
+
         private void PasswordEntry_Focused(object sender, FocusEventArgs e)
         {
             if (PasswordEntry.Text == "***********")
@@ -35,28 +38,48 @@ namespace AppFakeStore.Views
         {
             if (string.IsNullOrWhiteSpace(PasswordEntry.Text))
             {
-                PasswordEntry.Text = "***********";
+                PasswordEntry.Text = "***********"; // Reestablece el texto por defecto si está vacío
             }
         }
+
         private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            string username = UsernameEntry.Text;
-            string password = PasswordEntry.Text;
+            // Mostrar la animación de carga
+            LoadingIndicator.IsRunning = true;
+            LoadingIndicator.IsVisible = true;
 
-            var viewModel = new LoginViewModel();
-            bool success = await viewModel.Login(username, password);
+            await Task.Delay(500); // Añade un retraso de 500 ms para probar
 
-            if (success)
+            try
             {
-                // Navegar a MainPage
-                await Navigation.PushAsync(new MainPage());
+                string username = UsernameEntry.Text;
+                string password = PasswordEntry.Text;
+
+                var viewModel = new LoginViewModel();
+                bool success = await viewModel.Login(username, password);
+
+                if (success)
+                {
+                    // Navegar a MainPage
+                    await Navigation.PushAsync(new MainPage());
+                }
+                else
+                {
+                    // Mostrar mensaje de error
+                    await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Mostrar mensaje de error
-                await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+                // Manejar posibles excepciones
+                await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
+            }
+            finally
+            {
+                // Ocultar la animación de carga
+                LoadingIndicator.IsRunning = false;
+                LoadingIndicator.IsVisible = false;
             }
         }
-
     }
 }

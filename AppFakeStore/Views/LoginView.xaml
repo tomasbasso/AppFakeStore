@@ -18,6 +18,7 @@
                             CornerRadius="30,30,0,0"
                             Fill="White"></RoundRectangle>
             <VerticalStackLayout Margin=" 30,0,30,0">
+                
                 <Label FontAttributes="Bold"
                        FontFamily="bold"
                        FontSize="Medium"
@@ -85,7 +86,9 @@
                     Text="Iniciar sesión"
                     TextColor="White"
                     Clicked="OnLoginButtonClicked" />
+                <ActivityIndicator x:Name="LoadingIndicator" IsVisible="False" Color="Black" IsRunning="False" />
             </VerticalStackLayout>
+            
         </Grid>
 
 

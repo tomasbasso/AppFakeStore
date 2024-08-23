@@ -15,7 +15,8 @@ public class LoginViewModel
     // Método para realizar el Login
     public async Task<bool> Login(string username, string password)
     {
-        var loginUrl = "https://fakestoreapi.com/auth/login"; // Fake Store API no tiene este endpoint, pero puedes simularlo o usar uno real si tienes.
+
+        var loginUrl = "https://fakestoreapi.com/auth/login"; 
 
         var loginData = new
         {
@@ -25,12 +26,12 @@ public class LoginViewModel
 
         try
         {
-            var response = await _httpClient.PostAsJsonAsync(loginUrl, loginData);
+            var response = await _httpClient.PostAsJsonAsync(loginUrl, loginData); //METODO POST utilizando HttpClient en .NET para enviar datos en formato JSON a un endpoint.
 
             if (response.IsSuccessStatusCode)
             {
                 var responseData = await response.Content.ReadAsStringAsync();
-                // Aquí puedes manejar el token o la respuesta
+                
                 return true;
             }
             else
@@ -45,5 +46,6 @@ public class LoginViewModel
             Console.WriteLine(ex.Message);
             return false;
         }
+       
     }
 }
