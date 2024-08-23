@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppFakeStore.Views.LoginView"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-             Title="LoginView">
+             NavigationPage.HasNavigationBar="False">
 
     <Grid RowDefinitions=".3*,.7*">
         <Image Aspect="AspectFill" Source="ropa.jpeg"/>

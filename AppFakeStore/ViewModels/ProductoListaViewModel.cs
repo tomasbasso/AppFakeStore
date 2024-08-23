@@ -10,7 +10,7 @@ namespace AppFakeStore.ViewModels;
 public partial class ProductoListaViewModel : BaseViewModel
 {
     public ObservableCollection<Producto> Productos { get; } = new();
-    
+
     [ObservableProperty]
     bool isRefreshing;
 
@@ -67,9 +67,9 @@ public partial class ProductoListaViewModel : BaseViewModel
         if (productoSeleccionado == null)
         {
             return;
-        }              
+        }
 
-        await Application.Current.MainPage.Navigation.PushAsync(new ProductoDetallePage(productoSeleccionado), true);        
+        await Application.Current.MainPage.Navigation.PushAsync(new ProductoDetallePage(productoSeleccionado), true);
     }
 
 }

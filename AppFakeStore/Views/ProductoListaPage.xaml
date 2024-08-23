@@ -6,7 +6,7 @@
              xmlns:model="clr-namespace:AppFakeStore.Models"
              x:DataType="vm:ProductoListaViewModel"
              Title="{Binding Title}">
-    
+
     <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*,Auto" RowSpacing="0">
 
         <RefreshView Grid.ColumnSpan="2" Command="{Binding GetProductosCommand}" IsRefreshing="{Binding IsRefreshing}">
@@ -18,7 +18,7 @@
                         SelectionChangedCommand="{Binding GoToDetailCommand}">
                 <CollectionView.EmptyView>
                     <StackLayout Padding="100">
-                        <Image Source="not_found.jpg" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <ActivityIndicator x:Name="LoadingIndicator" IsVisible="False" Color="Black" IsRunning="False" />
                     </StackLayout>
                 </CollectionView.EmptyView>
 
@@ -30,21 +30,41 @@
                             ColumnSpacing="10" 
                             RowSpacing="10" 
                             RowDefinitions="Auto,*">
-                           
+
+
                             <Image Grid.Column="0"
-                               Source="{Binding image}"
+                            Source="{Binding image}"
                                WidthRequest="80"
                                HeightRequest="80"
                                Aspect="AspectFit"/>
+                                
 
-                            <Label Grid.Column="1" 
-                               Text="{Binding title}"
-                               VerticalOptions="Center"
-                               TextColor="Blue"/>
-                            
-                        </Grid>
+
+                                <VerticalStackLayout Grid.Column="1"
+                VerticalOptions="Center"
+                Spacing="2">
+
+                                    <Label Text="{Binding title}"
+                   TextColor="Blue"
+                   FontAttributes="Bold"
+                   FontSize="Medium"/>
+
+
+                                    <Label Text="{Binding category}"
+                   TextColor="Gray"
+                   FontSize="Small"/>
+
+
+                                    <Label Text="{Binding price}"
+                   TextColor="green"
+                   FontSize="Small"/>
+
+                                </VerticalStackLayout>
+                            </Grid>
+                    
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+
 
 
             </CollectionView>

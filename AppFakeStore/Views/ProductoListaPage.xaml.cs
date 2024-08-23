@@ -21,7 +21,18 @@ public partial class ProductoListaPage : ContentPage
 
 		if (vm != null)
 		{
-			await vm.GetProductosCommand.ExecuteAsync(null);
-		}
-	}
+            // Mostrar la animación de carga
+            LoadingIndicator.IsRunning = true;
+            LoadingIndicator.IsVisible = true;
+
+          
+            await vm.GetProductosCommand.ExecuteAsync(null);
+        } else
+		 
+    {
+            // Ocultar la animación de carga
+            LoadingIndicator.IsRunning = false;
+            LoadingIndicator.IsVisible = false;
+        }
+    }
 }

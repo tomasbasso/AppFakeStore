@@ -5,12 +5,12 @@ namespace AppFakeStore.Views;
 
 public partial class ProductoDetallePage : ContentPage
 {
-	public ProductoDetallePage(Producto param)
-	{
-		InitializeComponent();
+    public ProductoDetallePage(Producto param)
+    {
+        InitializeComponent();
 
-		ProductoDetalleViewModel vm = new ProductoDetalleViewModel();
-		this.BindingContext = vm;		
-		vm.Producto = param;
-	}
+        ProductoDetalleViewModel vm = new ProductoDetalleViewModel();
+        this.BindingContext = vm;
+        vm.Producto = param;
+    }
 }

@@ -21,5 +21,5 @@ public partial class ProductoDetalleViewModel : BaseViewModel
         await Application.Current.MainPage.Navigation.PopAsync();
     }
 
-    
+
 }

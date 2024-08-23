@@ -8,6 +8,7 @@ namespace AppFakeStore.Views
         public LoginView()
         {
             InitializeComponent();
+
         }
 
         private void UsernameEntry_Focused(object sender, FocusEventArgs e)

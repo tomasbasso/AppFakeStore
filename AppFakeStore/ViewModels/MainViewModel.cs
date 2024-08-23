@@ -7,12 +7,13 @@ public partial class MainViewModel : BaseViewModel
 {
     public MainViewModel()
     {
-        Title = "ITES - Demo MVVM";
+       this.Title = ""; // Eliminar título de la barra superior
     }
 
     [RelayCommand]
     public async Task GoToProductoLista()
     {
+        // Mostrar la animación de carga
         await Application.Current.MainPage.Navigation.PushAsync(new ProductoListaPage());
     }
 
