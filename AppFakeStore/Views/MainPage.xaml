@@ -27,7 +27,7 @@
                         <FontImageSource Size="22" Color="Black" FontFamily="MaterialDesignIcons" Glyph="&#xf05b;" />
                     </Button.ImageSource>
                 </Button>
-                <Button ContentLayout="Top, 5" BorderWidth="1" BorderColor="Black" BackgroundColor="White" TextColor="Black" Grid.Column="0" Grid.Row="2" Text="Usuarios" HeightRequest="80">
+                <Button ContentLayout="Top, 5" BorderWidth="1" BorderColor="Black" BackgroundColor="White" TextColor="Black" Grid.Column="0" Grid.Row="2" Text="Usuarios" HeightRequest="80" Command="{Binding GoToUsuariosCommand}" >
                     <Button.ImageSource>
                         <FontImageSource Size="22" Color="Black" FontFamily="MaterialDesignIcons" Glyph="&#xe7fd;" />
                     </Button.ImageSource>

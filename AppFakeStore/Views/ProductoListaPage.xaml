@@ -24,15 +24,17 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Producto">
-                        <Grid 
+                     
+                            <Grid 
+                            
                             ColumnDefinitions=".3*,.7*"
                             Margin="10" 
                             ColumnSpacing="10" 
                             RowSpacing="10" 
                             RowDefinitions="Auto,*">
+                            
 
-
-                            <Image Grid.Column="0"
+                                <Image Grid.Column="0"
                             Source="{Binding image}"
                                WidthRequest="80"
                                HeightRequest="80"
@@ -60,8 +62,9 @@
                    FontSize="Small"/>
 
                                 </VerticalStackLayout>
-                            </Grid>
-                    
+                        
+    </Grid>
+                       
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
 

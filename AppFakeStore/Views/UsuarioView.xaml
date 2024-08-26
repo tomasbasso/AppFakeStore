@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppFakeStore.ViewModels"
+             x:Class="AppFakeStore.Views.UsuarioView"
+             Title="Usuarios">
+
+    <ContentPage.BindingContext>
+        <viewModels:UsuarioListaViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- ActivityIndicator que se muestra mientras se cargan los datos -->
+        <ActivityIndicator x:Name="LoadingIndicator"
+                           IsRunning="{Binding IsLoading}"
+                           IsVisible="{Binding IsLoading}"
+                           Color="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HeightRequest="50" />
+
+        <ScrollView IsVisible="{Binding IsDataLoaded}">
+            <CollectionView ItemsSource="{Binding Usuarios}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Black" Margin="7">
+                            <Grid ColumnDefinitions="0.6*,0.4*" RowDefinitions="*,*" ColumnSpacing="0">
+                                <Image Grid.Column="1"
+                                       Source="usuario.png" 
+                                       HeightRequest="60"
+                                       Aspect="AspectFit"/>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding FullName}" FontSize="20" Grid.Column="2" />
+                                    <Label Text="{Binding email}" FontSize="10" Grid.Column="2" />
+                                    <Label Text="{Binding phone}" FontSize="16" Grid.Column="2" />
+                                    <Label Text="{Binding address.city}" FontSize="16" Grid.Column="2" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
+</ContentPage>

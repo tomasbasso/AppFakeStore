@@ -63,8 +63,10 @@
 	  <None Remove="Resources\Fonts\MaterialIcons-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Solid.otf" />
 	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\mia.jpg" />
 	  <None Remove="Resources\Images\not_found.jpg" />
 	  <None Remove="Resources\Images\ropa.jpeg" />
+	  <None Remove="Resources\Images\usuario.png" />
 	  <None Remove="Resources\Raw\shopping-cart.json" />
 	</ItemGroup>
 
@@ -87,6 +89,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProductoListaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UsuarioView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
