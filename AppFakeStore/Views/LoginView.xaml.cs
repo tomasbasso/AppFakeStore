@@ -10,7 +10,7 @@ namespace AppFakeStore.Views
             InitializeComponent();
 
         }
-
+        //Propiedad visuales para borrar datos en caso de que esten mal
         private void UsernameEntry_Focused(object sender, FocusEventArgs e)
         {
             if (UsernameEntry.Text == "Usuario")
@@ -42,14 +42,16 @@ namespace AppFakeStore.Views
                 PasswordEntry.Text = "***********"; // Reestablece el texto por defecto si está vacío
             }
         }
-
+        
+        /// ///////////////////////////////////////////////////////////////////////////////////
+       
         private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
             // Mostrar la animación de carga
             LoadingIndicator.IsRunning = true;
             LoadingIndicator.IsVisible = true;
 
-            await Task.Delay(500); // Añade un retraso de 500 ms para probar
+            await Task.Delay(500); // retraso para ver inidicador
 
             try
             {
@@ -57,7 +59,7 @@ namespace AppFakeStore.Views
                 string password = PasswordEntry.Text;
 
                 var viewModel = new LoginViewModel();
-                bool success = await viewModel.Login(username, password);
+                bool success = await viewModel.Login(username, password); //compara con el login , si es correcto entra
 
                 if (success)
                 {

@@ -8,10 +8,12 @@ namespace AppFakeStore.ViewModels
 {
     public class UsuarioListaViewModel : ObservableObject
     {
-        private readonly IUsuariosService _usuariosService;
+        private readonly IUsuariosService _usuariosService;//serivicio para traer la lista
 
         public ObservableCollection<Usuarios> Usuarios { get; set; } = new ObservableCollection<Usuarios>();
 
+
+        //PROPIEDAD DEL INDICADOR DE CARGA
         private bool _isLoading;
         public bool IsLoading
         {
@@ -23,29 +25,31 @@ namespace AppFakeStore.ViewModels
         public bool IsDataLoaded
         {
             get => _isDataLoaded;
-            set => SetProperty(ref _isDataLoaded, value);
+            set => SetProperty(ref _isDataLoaded, value);//ACTUALIZA VALOR
         }
-
+       
+        /// ///////////////////////////////////////////////
+      
         public UsuarioListaViewModel()
         {
             _usuariosService = new UsuariosService();
-            _ = CargarUsuarios();
+            _ = CargarUsuarios(); //_ = permite llamar al método asincrónico sin necesidad de esperar su resultado explícitamente
         }
 
         private async Task CargarUsuarios()
         {
-            IsLoading = true;
+            IsLoading = true;//datos en carga
             IsDataLoaded = false;
 
-            var usuarios = await _usuariosService.ObtenerUsuariosAsync();
+            var usuarios = await _usuariosService.ObtenerUsuariosAsync();// obtengo  lista de usuarios
             Usuarios.Clear();
             foreach (var usuario in usuarios)
             {
-                Usuarios.Add(usuario);
+                Usuarios.Add(usuario);//Agrega los c/u de los usuarios 
             }
 
             IsLoading = false;
-            IsDataLoaded = true;
+            IsDataLoaded = true; //Se establece cargadp
         }
     }
 }

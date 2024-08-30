@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 public class LoginViewModel
 {
-    private readonly HttpClient _httpClient;
+    private readonly HttpClient _httpClient; //para enviar solicitudes HTTP
 
     public LoginViewModel()
     {
-        _httpClient = new HttpClient();
+        _httpClient = new HttpClient();//Ctor para enviar datos a la api
     }
 
     // Método para realizar el Login
@@ -30,13 +30,12 @@ public class LoginViewModel
 
             if (response.IsSuccessStatusCode)
             {
-                var responseData = await response.Content.ReadAsStringAsync();
-                
+                var responseData = await response.Content.ReadAsStringAsync();// lee la respuesta como una cadena de texto
+
                 return true;
             }
             else
             {
-                // Manejar error de autenticación
                 return false;
             }
         }

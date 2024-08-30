@@ -19,7 +19,7 @@
                            VerticalOptions="Center"
                            HeightRequest="50" />
 
-        <ScrollView IsVisible="{Binding IsDataLoaded}">
+        <ScrollView IsVisible="{Binding IsDataLoaded}"> 
             <CollectionView ItemsSource="{Binding Usuarios}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
