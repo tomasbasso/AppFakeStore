@@ -9,7 +9,7 @@ namespace AppFakeStore
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginView());
+            MainPage = new NavigationPage(new MainPage());
 
         }
     }

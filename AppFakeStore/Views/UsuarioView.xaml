@@ -20,26 +20,28 @@
                            HeightRequest="50" />
 
         <ScrollView IsVisible="{Binding IsDataLoaded}"> 
-            <CollectionView ItemsSource="{Binding Usuarios}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BorderColor="Black" Margin="7">
-                            <Grid ColumnDefinitions="0.6*,0.4*" RowDefinitions="*,*" ColumnSpacing="0">
-                                <Image Grid.Column="1"
-                                       Source="usuario.png" 
-                                       HeightRequest="60"
-                                       Aspect="AspectFit"/>
-                                <StackLayout Padding="10">
-                                    <Label Text="{Binding FullName}" FontSize="20" Grid.Column="2" />
-                                    <Label Text="{Binding email}" FontSize="10" Grid.Column="2" />
-                                    <Label Text="{Binding phone}" FontSize="16" Grid.Column="2" />
-                                    <Label Text="{Binding address.city}" FontSize="16" Grid.Column="2" />
-                                </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+           <CollectionView ItemsSource="{Binding Usuarios}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <Frame BorderColor="Black" Margin="7">
+                <Grid ColumnDefinitions="0.6*,0.4*" RowDefinitions="*,*" ColumnSpacing="0">
+                    <Image Grid.Column="1"
+                           Source="usuario.png" 
+                           HeightRequest="60"
+                           Aspect="AspectFit"/>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding FullName}" FontSize="20" Grid.Column="2" />
+                        <Label Text="{Binding email}" FontSize="10" Grid.Column="2" />
+                        <Label Text="{Binding phone}" FontSize="16" Grid.Column="2" />
+                        <Label Text="{Binding address.city}" FontSize="16" Grid.Column="2" />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
         </ScrollView>
     </Grid>
 </ContentPage>

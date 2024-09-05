@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFakeStore.Views.usuariodetallepage"
+             Title="Detalle de Usuario">
+    <ScrollView>
+    <StackLayout Padding="10">
+        <Grid ColumnDefinitions="0.6*,0.4*" RowDefinitions="*,*" ColumnSpacing="0">
+            <Image Grid.Column="1"
+           Source="usuario.png" 
+           HeightRequest="60"
+           Aspect="AspectFit"/>
+            <Image Grid.Column="0"
+           Source="logo.png" 
+           HeightRequest="100"
+           Aspect="AspectFit"/>
+
+            
+        </Grid>
+        <StackLayout Padding="10">
+                <Label Text="Nombre" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding FullName}" Grid.Row="1" VerticalOptions="Center" FontSize="20" Margin="10" />
+                <Label Text="Email:" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding email}" Grid.Row="1" VerticalOptions="Center" FontSize="20"  Margin="10"/>
+                <Label Text="Telefono:" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding phone}" Grid.Row="1" VerticalOptions="Center" FontSize="20" Margin="10" />
+                <Label Text="Direccion:" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding Direccion}" Grid.Row="1" VerticalOptions="Center" FontSize="20"  Margin="10"/>
+                <Label Text="Ciudad:" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding address.city}" Grid.Row="1" VerticalOptions="Center" FontSize="20" Margin="10"/>
+                <Label Text="Codigo postal:" Grid.Column="0" Grid.Row="0" FontSize="14" FontAttributes="Bold" VerticalOptions="Center"   TextDecorations="Underline"/>
+            <Label Text="{Binding address.zipcode}" Grid.Row="1" VerticalOptions="Center" FontSize="20" Margin="10" />
+           
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

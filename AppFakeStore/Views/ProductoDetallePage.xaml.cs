@@ -12,5 +12,6 @@ public partial class ProductoDetallePage : ContentPage
         ProductoDetalleViewModel vm = new ProductoDetalleViewModel();
         this.BindingContext = vm;
         vm.Producto = param;
+        
     }
 }
