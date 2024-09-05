@@ -8,7 +8,7 @@ public partial class MainViewModel : BaseViewModel
 {
     public MainViewModel()
     {
-        this.Title = ""; // Eliminar título de la barra superior
+        this.Title = ""; 
     }
 
     [RelayCommand]
@@ -23,7 +23,7 @@ public partial class MainViewModel : BaseViewModel
         await Application.Current.MainPage.Navigation.PushAsync(new AcercaDePage());
     }
 
-    // Agregar el atributo RelayCommand aquí
+   
     [RelayCommand]
     public async Task GoToUsuarios()
     {

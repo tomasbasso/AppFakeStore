@@ -25,7 +25,7 @@ namespace AppFakeStore.ViewModels
 
         public UsuarioListaViewModel()
         {
-            // Constructor predeterminado
+     
         }
 
         public UsuarioListaViewModel(INavigation navigation)

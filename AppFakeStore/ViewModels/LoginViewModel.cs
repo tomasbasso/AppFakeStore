@@ -41,7 +41,6 @@ public class LoginViewModel
         }
         catch (Exception ex)
         {
-            // Manejo de errores, por ejemplo, conexión fallida
             Console.WriteLine(ex.Message);
             return false;
         }

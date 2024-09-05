@@ -1,6 +1,6 @@
 using AppFakeStore.Models;
 using AppFakeStore.ViewModels;
-using AppFakeStore.Views; // Asegúrate de importar el namespace correcto
+using AppFakeStore.Views; 
 
 namespace AppFakeStore.Views
 {
@@ -16,7 +16,7 @@ namespace AppFakeStore.Views
         {
             try
             {
-                if (seleccion.CurrentSelection != null && seleccion.CurrentSelection.Count > 0)//comparo que tenga contenido
+                if (seleccion.CurrentSelection != null && seleccion.CurrentSelection.Count > 0)//compar
                 {
                     // Obtiene el usuario seleccionado
                     var usuario_seleccionado = seleccion.CurrentSelection[0] as Usuarios;
