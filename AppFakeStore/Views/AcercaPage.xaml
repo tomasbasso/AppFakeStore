@@ -5,7 +5,7 @@
              Title="Informacion Personal">
     <VerticalStackLayout>
         <Label Text="Tomás Basso Fernández" TextColor="Black" FontFamily="serif" Margin="10" FontSize="20" HorizontalOptions="CenterAndExpand" />
-        <Image Source="mia.jpeg" HeightRequest="400" Aspect="AspectFit" Margin="10"/>
+        <Image Source="mia.jpg" HeightRequest="400" Aspect="AspectFit" Margin="10"/>
         <HorizontalStackLayout HorizontalOptions="Center">
             <Button Text="Hablemos" BackgroundColor="Gainsboro" TextColor="#F3131E" Margin="15" WidthRequest="120" Clicked="OnEmailButtonClicked"/>
             <Button Text="Contacto" BackgroundColor="Gainsboro" TextColor="#F3131E" Margin="15" WidthRequest="120" Clicked="OnPhoneButtonClicked"/>
